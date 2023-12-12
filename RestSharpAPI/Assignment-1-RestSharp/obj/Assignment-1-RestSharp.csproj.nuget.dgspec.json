@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Testing\\Module-3-Dailyworks-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj": {}
+    "D:\\Testing\\Module-3-Assignment-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj": {}
   },
   "projects": {
-    "D:\\Testing\\Module-3-Dailyworks-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj": {
+    "D:\\Testing\\Module-3-Assignment-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Testing\\Module-3-Dailyworks-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj",
+        "projectUniqueName": "D:\\Testing\\Module-3-Assignment-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj",
         "projectName": "Assignment-1-RestSharp",
-        "projectPath": "D:\\Testing\\Module-3-Dailyworks-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj",
+        "projectPath": "D:\\Testing\\Module-3-Assignment-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\Assignment-1-RestSharp.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Testing\\Module-3-Dailyworks-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\obj\\",
+        "outputPath": "D:\\Testing\\Module-3-Assignment-API\\Module-3-Assignments\\RestSharpAPI\\Assignment-1-RestSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
