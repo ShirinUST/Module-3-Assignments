@@ -1,0 +1,30 @@
+2023-12-13 17:45:56.781 +05:30 [INF] Get Single User Test started
+2023-12-13 17:45:57.241 +05:30 [INF] API response: {
+  "userId": 1,
+  "id": 3,
+  "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+  "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+}
+2023-12-13 17:45:57.248 +05:30 [INF] Returned User Information
+2023-12-13 17:45:57.250 +05:30 [INF] Id is same as what we are checking
+2023-12-13 17:45:57.251 +05:30 [INF] Email is not empty
+2023-12-13 17:45:57.251 +05:30 [INF] Get single user test passed
+2023-12-13 17:45:57.258 +05:30 [INF] Create User Test started
+2023-12-13 17:45:57.767 +05:30 [INF] Created User Successfully
+2023-12-13 17:45:57.767 +05:30 [INF] Created and returned the user
+2023-12-13 17:45:57.767 +05:30 [INF] Create User Test Passed
+2023-12-13 17:45:57.768 +05:30 [INF] Update User Test Started
+2023-12-13 17:45:58.742 +05:30 [INF] User updated as {
+  "title": "Wings",
+  "id": 2
+}
+2023-12-13 17:45:58.742 +05:30 [INF] Updated Successfully
+2023-12-13 17:45:58.742 +05:30 [INF] Update User Test passed
+2023-12-13 17:45:58.743 +05:30 [INF] Delete User Test Started
+2023-12-13 17:45:59.688 +05:30 [INF] User Deleted
+2023-12-13 17:45:59.688 +05:30 [INF] Delete User test passed all Asserts
+2023-12-13 17:45:59.688 +05:30 [INF] Get Non Existing User Test Started
+2023-12-13 17:46:00.665 +05:30 [INF] Get Non Existing User test passed all Asserts
+2023-12-13 17:46:00.666 +05:30 [INF] Get all user test started
+2023-12-13 17:46:00.914 +05:30 [INF] Got all user
+2023-12-13 17:46:00.917 +05:30 [INF] Get all User Test Passed all asserts
