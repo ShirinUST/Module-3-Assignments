@@ -1,5 +1,6 @@
 ﻿using CaseStudy_1_RestfulBooker.Models;
 using CaseStudy_1_RestfulBooker.Utilities;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
@@ -109,25 +110,15 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
                 Log.Information("Create Booking Test - Failed");
             }
         }
+       
         [Test, Order(4)]
         [TestCase(2)]
         public void UpdateBookingTest(int id)
         {
-            test = extent.CreateTest("GetToken Test");
-            Log.Information("GetToken Test Started");
-            var request = new RestRequest("auth", Method.Post);
-            request.AddHeader("Content-Type", "application/json");
-            request.AddJsonBody(new
-            {
-                username = "admin",
-                password = "password123"
-            });
+            var token = UpdateToken();
             Log.Information("Token Generated");
             try
             {
-                var response = client.Execute(request);
-
-                var token = JsonConvert.DeserializeObject<Authentication>(response.Content);
                 Log.Information("Update Booking test started");
                 var requestput = new RestRequest("booking/"+id, Method.Put);
                 requestput.AddHeader("Content-Type", "application/json");
@@ -158,6 +149,7 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
                 test.Fail("Update Booking test failed");
             }
         }
+        /*
         [Test, Order(0)]
         public void GetTokenTest()
         {
@@ -186,25 +178,18 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
                 test.Fail("GetToken test failed");
             }
         }
+        */
         [Test, Order(5)]
-        public void DeleteBookingTest()
+        [TestCase(12)]
+        public void DeleteBookingTest(int id)
         {
-
             test = extent.CreateTest("Delete Booking test");
             Log.Information("DeleteBooking Test started");
-            var requestAuth = new RestRequest("auth", Method.Post);
-            requestAuth.AddHeader("Content-Type", "application/json");
-            requestAuth.AddJsonBody(new
-            {
-                username = "admin",
-                password = "password123"
-            });
+            var token = UpdateToken();
             Log.Information("Token Generated");
-            var request = new RestRequest("booking/11", Method.Delete);
+            var request = new RestRequest("booking/"+id, Method.Delete);
             try
             {
-                var responseAuth = client.Execute(requestAuth);
-                var token = JsonConvert.DeserializeObject<Authentication>(responseAuth.Content);
                 request.AddHeader("Cookie", "token=" + token.Token);
                 Log.Information("At header added cookie with token value");
                 var response = client.Execute(request);

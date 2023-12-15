@@ -1,0 +1,4 @@
+2023-12-15 17:09:10.606 +05:30 [INF] Token Generated
+2023-12-15 17:09:10.623 +05:30 [INF] Update Booking test started
+2023-12-15 17:09:10.623 +05:30 [INF] At header added cookie with token value
+2023-12-15 17:09:10.918 +05:30 [INF] Update Booking test passed

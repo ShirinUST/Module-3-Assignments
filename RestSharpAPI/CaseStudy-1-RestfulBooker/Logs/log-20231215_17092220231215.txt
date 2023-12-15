@@ -1,0 +1,6 @@
+2023-12-15 17:09:22.589 +05:30 [INF] DeleteBooking Test started
+2023-12-15 17:09:23.960 +05:30 [INF] Token Generated
+2023-12-15 17:09:23.960 +05:30 [INF] At header added cookie with token value
+2023-12-15 17:09:24.225 +05:30 [INF] Status code test passed
+2023-12-15 17:09:24.225 +05:30 [INF] Booking id data test passed
+2023-12-15 17:09:24.225 +05:30 [INF] DeleteBooking test passed all Asserts
