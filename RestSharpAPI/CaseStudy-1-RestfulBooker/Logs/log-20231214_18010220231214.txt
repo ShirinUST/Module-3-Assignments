@@ -1,0 +1,5 @@
+2023-12-14 18:01:02.902 +05:30 [INF] Get Booking Test started
+2023-12-14 18:01:04.214 +05:30 [INF]   Expected: OK
+  But was:  418
+
+2023-12-14 18:01:04.214 +05:30 [INF] Get Booking Test failed
