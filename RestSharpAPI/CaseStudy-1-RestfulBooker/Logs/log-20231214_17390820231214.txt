@@ -1,3 +1,0 @@
-2023-12-14 17:39:08.621 +05:30 [INF] Get Booking Id Test started
-2023-12-14 17:39:10.206 +05:30 [INF] Got all booking id
-2023-12-14 17:39:10.218 +05:30 [INF] Get Booking Id Test Passed all asserts

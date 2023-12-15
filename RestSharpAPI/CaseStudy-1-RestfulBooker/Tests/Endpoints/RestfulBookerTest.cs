@@ -7,6 +7,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
     internal class RestfulBookerTest:CoreCodes
     {
         [Test,Order(1)]
-        public void GetBookingIds()
+        public void GetBookingIdsTest()
         {
             test = extent.CreateTest("Get Booking Id Test");
             Log.Information("Get Booking Id Test started");
@@ -41,11 +42,12 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
             }
         }
         [Test, Order(2)]
-        public void GetBooking()
+        [TestCase(2)]
+        public void GetBookingTest(int id)
         {
             test = extent.CreateTest("Get Booking Test");
             Log.Information("Get Booking Test started");
-            var request = new RestRequest("booking/1", Method.Get);
+            var request = new RestRequest("booking/"+id, Method.Get);
             request.AddHeader("Accept", "application/json");
             var response = client.Execute(request);
             try
@@ -68,7 +70,7 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
 
         }
         [Test, Order(3)]
-        public void CreateBooking()
+        public void CreateBookingTest()
         {
             test = extent.CreateTest("Create Booking Test");
             Log.Information("Create Booking Test started");
@@ -105,6 +107,119 @@ namespace CaseStudy_1_RestfulBooker.Tests.Endpoints
                 test.Fail("Create Booking Test- Failed");
                 Log.Information($"{ex.Message}");
                 Log.Information("Create Booking Test - Failed");
+            }
+        }
+        [Test, Order(4)]
+        [TestCase(2)]
+        public void UpdateBookingTest(int id)
+        {
+            test = extent.CreateTest("GetToken Test");
+            Log.Information("GetToken Test Started");
+            var request = new RestRequest("auth", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddJsonBody(new
+            {
+                username = "admin",
+                password = "password123"
+            });
+            Log.Information("Token Generated");
+            try
+            {
+                var response = client.Execute(request);
+
+                var token = JsonConvert.DeserializeObject<Authentication>(response.Content);
+                Log.Information("Update Booking test started");
+                var requestput = new RestRequest("booking/"+id, Method.Put);
+                requestput.AddHeader("Content-Type", "application/json");
+                requestput.AddHeader("Accept", "application/json");
+                requestput.AddHeader("Cookie", "token=" + token.Token);
+                Log.Information("At header added cookie with token value");
+
+                requestput.AddJsonBody(new
+                {
+                    firstname = "John",
+                    lastname = "Smith",
+                    totalprice = 111,
+                    depositpaid = true,
+                    bookingdates = new
+                    {
+                        checkin = "2018-01-01",
+                        checkout = "2019-01-01"
+                    },
+                    additionalneeds = "Breakfast"
+                });
+                var responseput = client.Execute(requestput);
+                Assert.That(responseput.StatusCode, Is.EqualTo(System.Net.HttpStatusCode.OK), "Status code is not 200");
+                Log.Information("Update Booking test passed");
+                Console.WriteLine(responseput.Content);
+            }
+            catch (AssertionException)
+            {
+                test.Fail("Update Booking test failed");
+            }
+        }
+        [Test, Order(0)]
+        public void GetTokenTest()
+        {
+            test = extent.CreateTest("GetToken Test");
+            Log.Information("GetToken Test Started");
+            var request = new RestRequest("auth", Method.Post);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddJsonBody(new
+            {
+                username = "admin",
+                password = "password123"
+            });
+            try
+            {
+                var response = client.Execute(request);
+                Console.WriteLine(response.Content);
+                Assert.That(response.Content, Is.Not.Null, "Response is null");
+                Log.Information("Request Intitiated");
+                test.Pass("GetToken Test Passed");
+                Assert.That(response.StatusCode, Is.EqualTo(System.Net.HttpStatusCode.OK), "Status code doest match");
+                Log.Information("Succees Response Recieved");
+                test.Pass("Status code Test Successful");
+            }
+            catch (AssertionException)
+            {
+                test.Fail("GetToken test failed");
+            }
+        }
+        [Test, Order(5)]
+        public void DeleteBookingTest()
+        {
+
+            test = extent.CreateTest("Delete Booking test");
+            Log.Information("DeleteBooking Test started");
+            var requestAuth = new RestRequest("auth", Method.Post);
+            requestAuth.AddHeader("Content-Type", "application/json");
+            requestAuth.AddJsonBody(new
+            {
+                username = "admin",
+                password = "password123"
+            });
+            Log.Information("Token Generated");
+            var request = new RestRequest("booking/11", Method.Delete);
+            try
+            {
+                var responseAuth = client.Execute(requestAuth);
+                var token = JsonConvert.DeserializeObject<Authentication>(responseAuth.Content);
+                request.AddHeader("Cookie", "token=" + token.Token);
+                Log.Information("At header added cookie with token value");
+                var response = client.Execute(request);
+                Assert.That(response.StatusCode, Is.EqualTo(System.Net.HttpStatusCode.Created), "Status code is not 200");
+                test.Pass("Status code test pass");
+                Log.Information("Status code test passed");
+                test.Pass("Booking id data test pass");
+                Log.Information("Booking id data test passed");
+                Log.Information("DeleteBooking test passed all Asserts");
+
+                test.Pass("DeleteBooking test passed all Asserts.");
+            }
+            catch (AssertionException)
+            {
+                test.Fail("DeleteBooking test failed");
             }
         }
     }

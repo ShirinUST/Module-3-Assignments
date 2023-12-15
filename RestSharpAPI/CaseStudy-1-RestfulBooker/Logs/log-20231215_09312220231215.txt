@@ -1,0 +1,25 @@
+2023-12-15 09:31:22.999 +05:30 [INF] GetToken Test Started
+2023-12-15 09:31:24.366 +05:30 [INF] Request Intitiated
+2023-12-15 09:31:24.376 +05:30 [INF] Succees Response Recieved
+2023-12-15 09:31:24.378 +05:30 [INF] Get Booking Id Test started
+2023-12-15 09:31:25.467 +05:30 [INF] Got all booking id
+2023-12-15 09:31:25.482 +05:30 [INF] Get Booking Id Test Passed all asserts
+2023-12-15 09:31:25.483 +05:30 [INF] Get Booking Test started
+2023-12-15 09:31:25.936 +05:30 [INF] API response: {"firstname":"Sally","lastname":"Wilson","totalprice":460,"depositpaid":false,"bookingdates":{"checkin":"2017-06-29","checkout":"2021-09-05"},"additionalneeds":"Breakfast"}
+2023-12-15 09:31:25.947 +05:30 [INF] Returned Booking Information
+2023-12-15 09:31:25.948 +05:30 [INF] Get Booking Test Passed
+2023-12-15 09:31:25.950 +05:30 [INF] Create Booking Test started
+2023-12-15 09:31:26.401 +05:30 [INF] Created User Successfully
+2023-12-15 09:31:26.402 +05:30 [INF] Created and returned the booking details
+2023-12-15 09:31:26.403 +05:30 [INF] Create User Test Passed
+2023-12-15 09:31:26.404 +05:30 [INF] GetToken Test Started
+2023-12-15 09:31:26.405 +05:30 [INF] Token Generated
+2023-12-15 09:31:26.911 +05:30 [INF] Update Booking test started
+2023-12-15 09:31:26.912 +05:30 [INF] At header added cookie with token value
+2023-12-15 09:31:27.173 +05:30 [INF] Update Booking test passed
+2023-12-15 09:31:27.175 +05:30 [INF] DeleteBooking Test started
+2023-12-15 09:31:27.175 +05:30 [INF] Token Generated
+2023-12-15 09:31:27.622 +05:30 [INF] At header added cookie with token value
+2023-12-15 09:31:27.887 +05:30 [INF] Status code test passed
+2023-12-15 09:31:27.887 +05:30 [INF] Booking id data test passed
+2023-12-15 09:31:27.887 +05:30 [INF] DeleteBooking test passed all Asserts

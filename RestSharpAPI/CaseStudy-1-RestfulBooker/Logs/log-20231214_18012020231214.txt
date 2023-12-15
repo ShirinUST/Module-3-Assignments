@@ -1,4 +1,0 @@
-2023-12-14 18:01:20.764 +05:30 [INF] Get Booking Test started
-2023-12-14 18:01:22.072 +05:30 [INF] API response: {"firstname":"Jim","lastname":"Jackson","totalprice":137,"depositpaid":true,"bookingdates":{"checkin":"2021-03-29","checkout":"2022-06-27"},"additionalneeds":"Breakfast"}
-2023-12-14 18:01:22.079 +05:30 [INF] Returned Booking Information
-2023-12-14 18:01:22.079 +05:30 [INF] Get Booking Test Passed

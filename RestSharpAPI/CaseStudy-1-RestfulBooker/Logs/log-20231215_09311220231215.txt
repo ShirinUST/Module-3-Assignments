@@ -1,0 +1,4 @@
+2023-12-15 09:31:12.192 +05:30 [INF] Create Booking Test started
+2023-12-15 09:31:13.759 +05:30 [INF] Created User Successfully
+2023-12-15 09:31:13.762 +05:30 [INF] Created and returned the booking details
+2023-12-15 09:31:13.762 +05:30 [INF] Create User Test Passed
